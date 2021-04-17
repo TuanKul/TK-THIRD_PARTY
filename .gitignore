@@ -1,0 +1,9 @@
+/target/
+*.class
+.settings
+bin
+.classpath
+.project
+/LOG_FILE_IS_UNDEFINED
+/.apt_generated/
+*.factorypath

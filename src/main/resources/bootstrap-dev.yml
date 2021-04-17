@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: tk-third-party-dev
+#  cloud:
+#    config:
+#      uri: https://admin:admin@apidev.int.easycredit.vn:8888
+third-party:
+  partner-List:
+    tiki:
+      des-file-path: /opt/img/
+    lazada:
+      des-file-path: /opt/img/
+    shoppe:
+      des-file-path: /opt/img/
