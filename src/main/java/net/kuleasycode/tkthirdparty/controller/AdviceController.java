@@ -13,7 +13,6 @@ import net.kuleasycode.tkthirdparty.common.HttpStatusCode;
 import net.kuleasycode.tkthirdparty.exception.BadRequestException;
 import net.kuleasycode.tkthirdparty.exception.InternalServerErrorException;
 import net.kuleasycode.tkthirdparty.response.BaseResponse;
-import vn.easycredit.msapplicationcreationapi.dto.response.FullResponse;
 
 @RestControllerAdvice
 @Slf4j

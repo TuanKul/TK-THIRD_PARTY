@@ -8,7 +8,10 @@ third-party:
   partner-List:
     tiki:
       des-file-path: /opt/img/
+      supplier: tiki
     lazada:
       des-file-path: /opt/img/
+      supplier: lazada
     shoppe:
       des-file-path: /opt/img/
+      supplier: shoppe

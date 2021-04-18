@@ -6,4 +6,5 @@ import lombok.Data;
 public class SupplierDetailsSetting {
 
 	private String desFilePath;
+	private String supplier;
 }
