@@ -21,4 +21,9 @@ public class ProductResponse extends BaseResponse{
 	public ProductResponse(String code, String message) {
 		super(code, message);
 	}
+	
+	public ProductResponse(String code, String message, List<ProductDetailsResponse> listProductDetail) {
+		super(code, message);
+		this.listProductDetail = listProductDetail;
+	}
 }

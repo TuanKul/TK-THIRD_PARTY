@@ -1,9 +1,37 @@
+logging:
+  file: /var/log/kuleasycode/third_party.log
 spring:
   application:
     name: tk-third-party-dev
-#  cloud:
-#    config:
-#      uri: https://admin:admin@apidev.int.easycredit.vn:8888
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tk_ouath_security?zeroDateTimeBehavior=convertToNull&characterEncoding=utf8
+    driverClassName: org.postgresql.Driver
+    username: tk_ouath
+    password: Rh6YYLv526
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+#      ddl-auto: create
+      ddl-auto: update
+    properties:
+      hibernate.jdbc.lob.non_contextual_creation: true
+eureka:
+  client:
+    enabled: false
+
+security:
+  oauth2:
+    client:
+      client-id: third_party_client
+      authorized-grant-types: client_credentials
+      client-secret: 123456
+    resource:
+      token-info-uri: http://localhost:9000/oauth/check_token
+      id: third_party_dev
+server:
+  port: 9090
+  
 third-party:
   partner-List:
     tiki:

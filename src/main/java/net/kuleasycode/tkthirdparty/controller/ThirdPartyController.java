@@ -35,26 +35,21 @@ public class ThirdPartyController {
 
 	@GetMapping(value = "/v1/{supplier}/get-all")
 	@PreAuthorize("#oauth2.hasScope('third_party_get_all')")
-	public ResponseEntity<ProductResponse> getAllProduct(@PathVariable("supplier") String supplier) {
-		try {
-			SupplierDetailsSetting detailsSetting = supplierSettings.getPartnerList().get(supplier);
-			if (StringUtils.isEmpty(detailsSetting)) {
-				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ProductResponse(HttpStatusCode._404.getCode(), HttpStatusCode._404.getValue()));
-			}
-			
-			ProductResponse response = new ProductResponse();
-			if (Constant.TIKI.equals(supplier)) {
-				response = tikiService.findAllProduct();
-			} else if (Constant.LAZADA.equals(supplier)) {
-				response = lazadaSerivce.findAllProduct();
-			} else if (Constant.SHOPPE.equals(supplier)) {
-				response = shoppeService.findAllProduct();
-			}
-			
-			return ResponseEntity.ok(response);
-		} catch (Exception e) {
-			log.info("[EXCEPTION]--" + supplier, e.toString());
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ProductResponse(HttpStatusCode._500.getCode(), HttpStatusCode._500.getValue()));
+	public ResponseEntity<ProductResponse> getAllProduct(@PathVariable("supplier") String supplier) throws Exception{
+		SupplierDetailsSetting detailsSetting = supplierSettings.getPartnerList().get(supplier);
+		if (StringUtils.isEmpty(detailsSetting)) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ProductResponse(HttpStatusCode._404.getCode(), HttpStatusCode._404.getValue()));
 		}
+		
+		ProductResponse response = new ProductResponse();
+		if (Constant.TIKI.equals(supplier)) {
+			response = tikiService.findAllProduct();
+		} else if (Constant.LAZADA.equals(supplier)) {
+			response = lazadaSerivce.findAllProduct();
+		} else if (Constant.SHOPPE.equals(supplier)) {
+			response = shoppeService.findAllProduct();
+		}
+		
+		return ResponseEntity.ok(response);
 	}
 }

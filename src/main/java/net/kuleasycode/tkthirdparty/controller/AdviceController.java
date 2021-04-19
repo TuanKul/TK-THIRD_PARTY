@@ -46,19 +46,19 @@ public class AdviceController {
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(result);
 	}
 	
-	@ExceptionHandler(NoHandlerFoundException.class)
-	public ResponseEntity<BaseResponse> handleNoHandlerFoundException(
-			NoHandlerFoundException noHandlerFoundException) {
-
-		log.error("No handler found for url request from client.", noHandlerFoundException);
-		log.info(noHandlerFoundException.getMessage());
-		log.info(noHandlerFoundException.getLocalizedMessage());
-
-		BaseResponse fullResponse = new BaseResponse();
-		fullResponse.setCode("URL_NOT_FOUND");
-		fullResponse
-				.setMessage("The url '" + noHandlerFoundException.getRequestURL() + "' not found.");
-
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(fullResponse);
-	}
+//	@ExceptionHandler(NoHandlerFoundException.class)
+//	public ResponseEntity<BaseResponse> handleNoHandlerFoundException(
+//			NoHandlerFoundException noHandlerFoundException) {
+//
+//		log.error("No handler found for url request from client.", noHandlerFoundException);
+//		log.info(noHandlerFoundException.getMessage());
+//		log.info(noHandlerFoundException.getLocalizedMessage());
+//
+//		BaseResponse fullResponse = new BaseResponse();
+//		fullResponse.setCode("URL_NOT_FOUND");
+//		fullResponse
+//				.setMessage("The url '" + noHandlerFoundException.getRequestURL() + "' not found.");
+//
+//		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(fullResponse);
+//	}
 }

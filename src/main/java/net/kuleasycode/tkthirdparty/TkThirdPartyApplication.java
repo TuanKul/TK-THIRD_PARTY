@@ -8,7 +8,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 @SpringBootApplication
@@ -18,7 +17,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EntityScan(basePackages = "net.kuleasycode")// tìm tất cả các entity
 @EnableAsync// làm việc vs synchonyed
 @EnableScheduling// thiết lập schedule chạy theo thời gian
-@EnableWebSecurity//custom config role nào được quyền vào url này
+//@EnableWebSecurity//custom config role nào được quyền vào url này
 @EnableResourceServer
 public class TkThirdPartyApplication {
 
