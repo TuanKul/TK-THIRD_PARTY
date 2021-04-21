@@ -27,9 +27,9 @@ public class LazadaService implements ThirdPartyService{
 				ProductDetailsResponse detail = new ProductDetailsResponse();
 				detail.setId(UUID.randomUUID().toString());
 				detail.setProductName("Lazada_" + i);
-				detail.setCurrentPrice("Price_" + i);
-				detail.setDiscountRate("Discount_Rate_" + i);
-				detail.setRate("Rate_" + i);
+				detail.setCurrentPrice(Double.valueOf(i));
+				detail.setDiscountRate(Double.valueOf(i));
+				detail.setRate(Double.valueOf(i));
 				listProductDetail.add(detail);
 			}
 			response = new ProductResponse(HttpStatusCode._200.getCode(), HttpStatusCode._200.getValue(), listProductDetail);

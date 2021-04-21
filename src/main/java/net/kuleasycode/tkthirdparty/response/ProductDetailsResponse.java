@@ -18,13 +18,13 @@ public class ProductDetailsResponse {
 	private String productName;
 	
 	@JsonProperty("current_price")
-	private String currentPrice;
+	private Double currentPrice;
 	
 	@JsonProperty("discount_rate")
-	private String discountRate;
+	private Double discountRate;
 	
 	@JsonProperty("rate")
-	private String rate;
+	private Double rate;
 	
 	@JsonProperty("image_name")
 	private String imageName;
